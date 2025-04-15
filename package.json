@@ -19,9 +19,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "flow": "npx flow",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/prop-types": "^15.7.14",
+    "flow-bin": "^0.267.0"
   }
 }

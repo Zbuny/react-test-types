@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import UserTSForm from './components/TS';
+import UserFlowCard from './components/Flow';
+import UserPropTypesCard from './components/PropTypes';
+
+type User = {
+  name: string;
+  age: number;
+  role: string;
+};
 
 function App() {
+  const [user, setUser] = useState<User | null>(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: '2rem' }}>
+      <h1>PropTypes, Flow, and TypeScript Test</h1>
+      <UserTSForm onSubmit={setUser} />
+      {user && (
+        <>
+          <UserFlowCard {...user} />
+          <UserPropTypesCard {...user} />
+        </>
+      )}
     </div>
   );
 }
